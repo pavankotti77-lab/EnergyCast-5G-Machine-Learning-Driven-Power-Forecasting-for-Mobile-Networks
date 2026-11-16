@@ -29,7 +29,6 @@ def test_all_pages_navigation():
         "Model Lab",
         "Forecast Studio",
         "Energy Saver Lab",
-        "About",
     ]
 
     for p in pages:

@@ -16,22 +16,16 @@ import streamlit as st
 
 # Local module imports
 from src.config import (
-    AIM,
-    AUTHORS,
     BEST_MODEL_PATH,
     COLORS,
-    CONCLUSION,
     DEFAULT_CO2_KG_PER_KWH,
     DEFAULT_ELECTRICITY_COST_USD,
     DEFAULT_PEAK_PERCENTILE,
     DEFAULT_PRB_THRESHOLD_PCT,
     METADATA_PATH,
-    PROBLEM_STATEMENT,
     PROJECT_TITLE,
     RAW_DATA_PATH,
-    REFERENCES,
     REQUIRED_COLUMNS,
-    SOLUTION,
     STATION_PROFILES,
     is_xgboost_available,
 )
@@ -169,7 +163,6 @@ with st.sidebar:
             "Model Lab",
             "Forecast Studio",
             "Energy Saver Lab",
-            "About",
         ],
         index=0,
         key="nav_sidebar_radio",
@@ -818,71 +811,3 @@ elif page == "Energy Saver Lab":
     st.markdown("#### Hourly Sleep Mode Audit Trail")
     st.dataframe(comp_df, width="stretch", height=280, hide_index=True)
 
-
-# ==============================================================================
-# 6. PAGE: ABOUT
-# ==============================================================================
-elif page == "About":
-    render_hero(
-        title="About the Project & Technical Specifications",
-        subtitle="Official project documentation, academic citations, methodology, and authors.",
-        badges=[{"label": "SRM University", "class": "badge-cyan"}, {"label": "Network x ML", "class": "badge-emerald"}],
-    )
-
-    c_ab1, c_ab2 = st.columns([3, 2])
-    with c_ab1:
-        st.markdown(
-            textwrap.dedent(f"""
-            <div class="glass-card">
-                <h3 style="color: #22D3EE; margin-bottom: 0.5rem;">Official Project Aim</h3>
-                <p style="color: #CBD5E1; line-height: 1.6; font-size: 0.95rem;">{AIM}</p>
-            </div>
-            <div class="glass-card">
-                <h3 style="color: #FBBF24; margin-bottom: 0.5rem;">Problem Statement</h3>
-                <p style="color: #CBD5E1; line-height: 1.6; font-size: 0.95rem;">{PROBLEM_STATEMENT}</p>
-            </div>
-            <div class="glass-card">
-                <h3 style="color: #A78BFA; margin-bottom: 0.5rem;">Proposed Solution</h3>
-                <p style="color: #CBD5E1; line-height: 1.6; font-size: 0.95rem;">{SOLUTION}</p>
-            </div>
-            <div class="glass-card">
-                <h3 style="color: #34D399; margin-bottom: 0.5rem;">Conclusion</h3>
-                <p style="color: #CBD5E1; line-height: 1.6; font-size: 0.95rem;">{CONCLUSION}</p>
-            </div>
-            """).strip(),
-            unsafe_allow_html=True,
-        )
-
-    with c_ab2:
-        st.markdown(
-            textwrap.dedent(f"""
-            <div class="glass-card">
-                <h3 style="color: #22D3EE; margin-bottom: 0.8rem;">Project Author</h3>
-                <div>
-                    <div style="font-size: 1.05rem; font-weight: 700; color: #F8FAFC;">{AUTHORS[0]['name']}</div>
-                    <div style="font-size: 0.85rem; color: #38BDF8; font-family: monospace;">GitHub: @{AUTHORS[0]['reg_no']}</div>
-                </div>
-            </div>
-            <div class="glass-card">
-                <h3 style="color: #A78BFA; margin-bottom: 0.8rem;">Academic References</h3>
-                <ol style="color: #94A3B8; font-size: 0.85rem; padding-left: 1.2rem; line-height: 1.6;">
-                    <li>{REFERENCES[0]}</li>
-                    <li>{REFERENCES[1]}</li>
-                    <li>{REFERENCES[2]}</li>
-                    <li>{REFERENCES[3]}</li>
-                </ol>
-            </div>
-            <div class="glass-card">
-                <h3 style="color: #34D399; margin-bottom: 0.8rem;">Technical Stack</h3>
-                <ul style="color: #94A3B8; font-size: 0.85rem; padding-left: 1.2rem; line-height: 1.6;">
-                    <li><b>Python:</b> 3.10+ in clean virtual environment (.venv)</li>
-                    <li><b>Machine Learning:</b> Scikit-Learn 1.9, XGBoost 3.4 / GradientBoosting</li>
-                    <li><b>Data Engineering:</b> Pandas 3.1, NumPy 2.5, Joblib</li>
-                    <li><b>Visual Dashboard:</b> Streamlit 1.67, Plotly 7.1</li>
-                    <li><b>Testing Suite:</b> Pytest 9.2 (Gates 1 - 5)</li>
-                    <li><b>Offline Capable:</b> Zero external CDN dependencies required</li>
-                </ul>
-            </div>
-            """).strip(),
-            unsafe_allow_html=True,
-        )

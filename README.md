@@ -81,10 +81,6 @@ Evaluated strictly on a chronological out-of-time test set (the final 15% of the
    - Before vs After hourly demand curves.
    - Plain-language operator recommendation card.
    - Real-time calculations of kWh conserved, USD saved (editable tariff), and kg CO₂ avoided.
-6. **About:**
-   - Official Aim, Problem Statement, Solution, and Conclusion from the PDF.
-   - Authors details and academic registration numbers.
-   - Exact academic references.
 
 ---
 
