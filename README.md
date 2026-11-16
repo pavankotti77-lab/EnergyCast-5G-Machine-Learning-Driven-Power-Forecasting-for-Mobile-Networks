@@ -90,8 +90,6 @@ Evaluated strictly on a chronological out-of-time test set (the final 15% of the
 
 ## Screenshots
 
-*(Placeholders for dashboard captures)*
-
 | Overview & Fleet Heatmap | Forecast Studio & Peak Detection |
 | :---: | :---: |
 | ![Overview Screenshot](docs/screenshots/overview.png) | ![Forecast Screenshot](docs/screenshots/forecast.png) |
