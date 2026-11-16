@@ -26,8 +26,7 @@ MODELS_DIR.mkdir(parents=True, exist_ok=True)
 # Project Metadata
 PROJECT_TITLE: str = "Machine Learning-Based Energy Consumption Prediction in 5G Mobile Communication Networks"
 AUTHORS: List[Dict[str, str]] = [
-    {"name": "Mallikarjun Pavan Kotti", "reg_no": "RA2311003050274"},
-    {"name": "Narayana Rao Yadlla", "reg_no": "RA2311003050058"},
+    {"name": "Sonika Reddy", "reg_no": "sonikareddy24"},
 ]
 
 AIM: str = (

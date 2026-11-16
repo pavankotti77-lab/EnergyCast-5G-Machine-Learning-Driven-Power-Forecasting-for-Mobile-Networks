@@ -7,9 +7,8 @@
 [![Pytest Passed](https://img.shields.io/badge/tests-24%20passed-34D399.svg)](https://docs.pytest.org/)
 
 **Theme:** Machine Learning x Network Communication  
-**Authors:**
-- **Mallikarjun Pavan Kotti** (Registration No: `RA2311003050274`)
-- **Narayana Rao Yadlla** (Registration No: `RA2311003050058`)
+**Author:**
+- **Sonika Reddy** ([@sonikareddy24](https://github.com/sonikareddy24))
 
 ---
 

@@ -32,12 +32,10 @@ from src.optimizer import simulate_energy_savings
 
 
 def test_metadata_and_authors():
-    """Verify authors and official PDF content."""
-    assert len(AUTHORS) == 2
-    assert AUTHORS[0]["name"] == "Mallikarjun Pavan Kotti"
-    assert AUTHORS[0]["reg_no"] == "RA2311003050274"
-    assert AUTHORS[1]["name"] == "Narayana Rao Yadlla"
-    assert AUTHORS[1]["reg_no"] == "RA2311003050058"
+    """Verify author and official references."""
+    assert len(AUTHORS) >= 1
+    assert AUTHORS[0]["name"] == "Sonika Reddy"
+    assert AUTHORS[0]["reg_no"] == "sonikareddy24"
     assert len(REFERENCES) == 4
     assert "Wireless Communications" in REFERENCES[0]
     assert "What Will 5G Be?" in REFERENCES[1]

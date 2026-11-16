@@ -1,7 +1,7 @@
 """5G Base Station Energy Consumption Prediction & Optimization Dashboard.
 
 Theme: Machine Learning x Network Communication.
-Authors: Mallikarjun Pavan Kotti (RA2311003050274), Narayana Rao Yadlla (RA2311003050058).
+Author: Sonika Reddy (@sonikareddy24).
 """
 
 from datetime import datetime, timedelta
@@ -857,14 +857,10 @@ elif page == "About":
         st.markdown(
             textwrap.dedent(f"""
             <div class="glass-card">
-                <h3 style="color: #22D3EE; margin-bottom: 0.8rem;">Project Authors</h3>
-                <div style="margin-bottom: 0.8rem;">
-                    <div style="font-size: 1.05rem; font-weight: 700; color: #F8FAFC;">{AUTHORS[0]['name']}</div>
-                    <div style="font-size: 0.85rem; color: #38BDF8; font-family: monospace;">Registration: {AUTHORS[0]['reg_no']}</div>
-                </div>
+                <h3 style="color: #22D3EE; margin-bottom: 0.8rem;">Project Author</h3>
                 <div>
-                    <div style="font-size: 1.05rem; font-weight: 700; color: #F8FAFC;">{AUTHORS[1]['name']}</div>
-                    <div style="font-size: 0.85rem; color: #38BDF8; font-family: monospace;">Registration: {AUTHORS[1]['reg_no']}</div>
+                    <div style="font-size: 1.05rem; font-weight: 700; color: #F8FAFC;">{AUTHORS[0]['name']}</div>
+                    <div style="font-size: 0.85rem; color: #38BDF8; font-family: monospace;">GitHub: @{AUTHORS[0]['reg_no']}</div>
                 </div>
             </div>
             <div class="glass-card">
