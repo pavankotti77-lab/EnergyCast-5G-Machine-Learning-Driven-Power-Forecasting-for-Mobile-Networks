@@ -510,17 +510,17 @@ elif page == "Model Lab":
     residuals = y_test - y_pred
 
     with c_act:
-        st.markdown("#### Actual vs Predicted Energy (Test Set Sample)")
+        st.markdown(f"#### Actual vs Predicted Energy ({active_m_name})")
         sample_plot_idx = np.random.choice(len(y_test), size=min(120, len(y_test)), replace=False)
         sample_sorted = np.sort(sample_plot_idx)
         fig_act = go.Figure()
         fig_act.add_trace(go.Scatter(y=y_test[sample_sorted], mode="lines+markers", name="Actual Telemetry", line=dict(color="#94A3B8", width=1.5)))
         fig_act.add_trace(go.Scatter(y=y_pred[sample_sorted], mode="lines", name=f"{active_m_name} Prediction", line=dict(color="#22D3EE", width=2.5)))
-        format_plotly_chart(fig_act, title=f"Actual vs Predicted - {active_m_name}", height=360)
+        format_plotly_chart(fig_act, height=360)
         st.plotly_chart(fig_act, width="stretch")
 
     with c_res:
-        st.markdown("#### Residual Distribution & Calibration")
+        st.markdown(f"#### Residual Distribution & Calibration (Mean: {np.mean(residuals):.2f}, Std: {np.std(residuals):.2f})")
         fig_res = px.histogram(
             residuals,
             nbins=40,
@@ -528,7 +528,7 @@ elif page == "Model Lab":
             color_discrete_sequence=["#8B5CF6"],
             opacity=0.85,
         )
-        format_plotly_chart(fig_res, title=f"Residual Error Histogram (Mean: {np.mean(residuals):.3f}, Std: {np.std(residuals):.3f})", height=360)
+        format_plotly_chart(fig_res, height=360, show_legend=False)
         st.plotly_chart(fig_res, width="stretch")
 
     # Feature Importance & Per Station Breakdown
@@ -548,7 +548,7 @@ elif page == "Model Lab":
             color_continuous_scale="Teal",
         )
         fig_imp.update_layout(yaxis=dict(autorange="reversed"))
-        format_plotly_chart(fig_imp, title="Top 10 Feature Importances", height=360)
+        format_plotly_chart(fig_imp, height=360, show_legend=False)
         st.plotly_chart(fig_imp, width="stretch")
 
     with c_sta:

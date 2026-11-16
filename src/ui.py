@@ -246,19 +246,21 @@ def format_plotly_chart(
     show_legend: bool = True,
 ) -> go.Figure:
     """Apply the custom Dark Telecom Control Room template to a Plotly figure."""
-    fig.update_layout(
-        template="plotly_dark",
-        paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor="rgba(11, 16, 32, 0.4)",
-        margin=dict(l=35, r=25, t=50 if title else 25, b=35),
-        height=height,
-        font=dict(family="Inter, -apple-system, sans-serif", color="#E2E8F0", size=12),
-        hoverlabel=dict(
-            bgcolor="#131B2E",
-            bordercolor="#38BDF8",
-            font=dict(family="Inter, sans-serif", color="#F8FAFC", size=12),
-        ),
-        legend=dict(
+    if title and show_legend:
+        # Separate title (top) and legend (bottom) to prevent overlapping in narrow/multi-column layouts
+        legend_layout = dict(
+            orientation="h",
+            yanchor="top",
+            y=-0.18,
+            xanchor="center",
+            x=0.5,
+            bgcolor="rgba(0,0,0,0)",
+            font=dict(size=11),
+        )
+        margin_t = 48
+        margin_b = 52
+    elif show_legend:
+        legend_layout = dict(
             orientation="h",
             yanchor="bottom",
             y=1.02,
@@ -267,17 +269,37 @@ def format_plotly_chart(
             bgcolor="rgba(0,0,0,0)",
             font=dict(size=11),
         )
-        if show_legend
-        else dict(visible=False),
+        margin_t = 30
+        margin_b = 35
+    else:
+        legend_layout = dict(visible=False)
+        margin_t = 45 if title else 25
+        margin_b = 35
+
+    fig.update_layout(
+        template="plotly_dark",
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(11, 16, 32, 0.4)",
+        margin=dict(l=35, r=25, t=margin_t, b=margin_b),
+        height=height,
+        font=dict(family="Inter, -apple-system, sans-serif", color="#E2E8F0", size=12),
+        hoverlabel=dict(
+            bgcolor="#131B2E",
+            bordercolor="#38BDF8",
+            font=dict(family="Inter, sans-serif", color="#F8FAFC", size=12),
+        ),
+        legend=legend_layout,
     )
 
     if title:
         fig.update_layout(
             title=dict(
                 text=f"<b>{title}</b>",
-                font=dict(family="Space Grotesk, sans-serif", size=15, color="#F8FAFC"),
+                font=dict(family="Space Grotesk, sans-serif", size=14, color="#F8FAFC"),
                 x=0.01,
-                y=0.96,
+                y=0.98,
+                xanchor="left",
+                yanchor="top",
             )
         )
 
