@@ -7,6 +7,9 @@
 [![Pytest Passed](https://img.shields.io/badge/tests-24%20passed-34D399.svg)](https://docs.pytest.org/)
 
 **Theme:** Machine Learning x Network Communication  
+**Authors:**
+- **Mallikarjun Pavan Kotti** (Registration No: `RA2311003050274`)
+- **Narayana Rao Yadlla** (Registration No: `RA2311003050058`)
 
 ---
 
@@ -106,7 +109,7 @@ Evaluated strictly on a chronological out-of-time test set (the final 15% of the
 │   └── config.toml             # Dark theme & server parameters
 ├── src/
 │   ├── __init__.py
-│   ├── config.py               # Paths, palette, station metadata
+│   ├── config.py               # Paths, palette, station metadata, authors
 │   ├── data_generator.py       # 12-month 5G base station data generator
 │   ├── preprocessing.py        # Imputation, deduplication, IQR capping
 │   ├── features.py             # Causal lags, cyclical encodings, time split

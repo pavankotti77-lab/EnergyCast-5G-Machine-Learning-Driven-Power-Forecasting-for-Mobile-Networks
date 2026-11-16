@@ -1,6 +1,9 @@
 """5G Base Station Energy Consumption Prediction & Optimization Dashboard.
 
 Theme: Machine Learning x Network Communication.
+Authors:
+- Mallikarjun Pavan Kotti (RA2311003050274)
+- Narayana Rao Yadlla (RA2311003050058)
 """
 
 from datetime import datetime, timedelta
