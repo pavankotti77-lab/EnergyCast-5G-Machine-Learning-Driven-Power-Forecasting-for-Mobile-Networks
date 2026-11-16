@@ -1,7 +1,6 @@
 """5G Base Station Energy Consumption Prediction & Optimization Dashboard.
 
 Theme: Machine Learning x Network Communication.
-Author: Sonika Reddy (@sonikareddy24).
 """
 
 from datetime import datetime, timedelta

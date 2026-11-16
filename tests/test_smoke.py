@@ -5,7 +5,6 @@ import pytest
 import pandas as pd
 from src.config import (
     AIM,
-    AUTHORS,
     REFERENCES,
     REQUIRED_COLUMNS,
     STATION_PROFILES,
@@ -31,11 +30,9 @@ from src.forecasting import forecast_energy, detect_peak_windows
 from src.optimizer import simulate_energy_savings
 
 
-def test_metadata_and_authors():
-    """Verify author and official references."""
-    assert len(AUTHORS) >= 1
-    assert AUTHORS[0]["name"] == "Sonika Reddy"
-    assert AUTHORS[0]["reg_no"] == "sonikareddy24"
+def test_metadata_and_references():
+    """Verify official project aim and academic references."""
+    assert len(AIM) > 20
     assert len(REFERENCES) == 4
     assert "Wireless Communications" in REFERENCES[0]
     assert "What Will 5G Be?" in REFERENCES[1]
